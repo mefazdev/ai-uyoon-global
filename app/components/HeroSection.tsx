@@ -5,11 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ROTATING_WORDS = [
-  "Fluency",
+
   "Confidence",
-  "Arabic",
-  "English",
-  "Bilingualism",
+
+
   "Career Growth",
   "Pronunciation",
   "Global Reach",
@@ -50,7 +49,7 @@ export default function HeroSection() {
           >
             {currentWord}
           </span>{" "}
-          of You,
+
           <br />
           Every Day.
         </h1>
