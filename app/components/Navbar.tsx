@@ -7,6 +7,20 @@ import Link from "next/link";
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      const el = document.getElementById(targetId);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", `/#${targetId}`);
+      }
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
@@ -26,17 +40,25 @@ export default function Navbar() {
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-gray-700">
             <Link
-              href="#courses"
+              href="/#about"
+              onClick={(e) => handleScroll(e, "about")}
+              className="hover:text-black transition-colors"
+            >
+              About Us
+            </Link>
+            <Link
+              href="/#courses"
+              onClick={(e) => handleScroll(e, "courses")}
               className="hover:text-black transition-colors"
             >
               Courses
             </Link>
-            <Link
+            {/* <Link
               href="#english"
               className="hover:text-black transition-colors"
             >
               Live Coaching
-            </Link>
+            </Link> */}
             <Link
               href="/meet-a-mentor"
               className="hover:text-black transition-colors"
@@ -79,20 +101,33 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-gray-200 px-6 py-5 flex flex-col gap-4 text-base font-medium shadow-lg animate-in slide-in-from-top-2 duration-200">
           <Link
-            href="#courses"
-            onClick={() => setMobileMenuOpen(false)}
+            href="/#about"
+            onClick={(e) => {
+              setMobileMenuOpen(false);
+              handleScroll(e, "about");
+            }}
+            className="text-gray-800 hover:text-blue-600 py-1"
+          >
+            About Us
+          </Link>
+          <Link
+            href="/#courses"
+            onClick={(e) => {
+              setMobileMenuOpen(false);
+              handleScroll(e, "courses");
+            }}
             className="text-gray-800 hover:text-blue-600 py-1"
           >
             Courses
           </Link>
 
-          <Link
+          {/* <Link
             href="#mentors"
             onClick={() => setMobileMenuOpen(false)}
             className="text-gray-800 hover:text-blue-600 py-1"
           >
             Live Coaching
-          </Link>
+          </Link> */}
           <Link
             href="/meet-a-mentor"
             onClick={() => setMobileMenuOpen(false)}

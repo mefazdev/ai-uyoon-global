@@ -86,7 +86,7 @@ export default function TopCoursesSection() {
   };
 
   return (
-    <section id="courses" className="relative w-full bg-white py-12 sm:py-16 overflow-hidden">
+    <section id="courses" className="scroll-mt-20 relative w-full bg-white py-12 sm:py-16 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="mb-6 sm:mb-8">

@@ -40,6 +40,12 @@ export default function HeroSection() {
   return (
     <section className="relative w-full bg-white pt-10 sm:pt-14 pb-16 overflow-hidden">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+        {/* Global Platform Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/70 text-primary text-xs sm:text-sm font-semibold mb-5 shadow-xs">
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <span>A Global Platform for Arabic Language Education &amp; Linguistic Excellence</span>
+        </div>
+
         {/* Main Headline */}
         <h1 className="text-center font-extrabold text-4xl sm:text-5xl md:text-[62px] lg:text-[68px] tracking-tight leading-[1.12] text-black max-w-4xl mx-auto">
           A New{" "}
@@ -56,7 +62,7 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="mt-5 text-center text-gray-600 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-          The Premier Arabic &amp; English Language Academy Built For Career Growth, Professionals &amp; Real-World Fluency
+          The Premier Arabic &amp; English Language Platform Built For Career Growth, Professionals &amp; Real-World Fluency
         </p>
 
         {/* Primary CTA Button */}
@@ -110,7 +116,7 @@ export default function HeroSection() {
             />
           </div>
           <span className="text-xs sm:text-sm font-medium text-gray-700">
-            10,000+ Students Mastered Arabic &amp; English with AL Uyoon Global
+            2,000+ Students Mastered Arabic  with AL Uyoon Global
           </span>
         </div>
 
@@ -181,8 +187,8 @@ export default function HeroSection() {
         <div className="mt-8 sm:mt-10 w-full max-w-[1080px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {/* Card 1: Arabic Courses */}
-            <Link
-              href="#courses"
+            <div
+              // href="#courses"
               className="bg-[#e8effc] hover:bg-[#dfe8fb] rounded-full px-5 sm:px-6 py-4 flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md group"
             >
               <div className="flex items-center gap-4">
@@ -201,7 +207,7 @@ export default function HeroSection() {
                 </span>
               </div>
               {/* White Circular Arrow */}
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm group-hover:translate-x-1 transition-transform duration-300">
+              {/* <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm group-hover:translate-x-1 transition-transform duration-300">
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]"
                   fill="none"
@@ -210,12 +216,12 @@ export default function HeroSection() {
                 >
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
-              </div>
-            </Link>
+              </div> */}
+            </div>
 
             {/* Card 2: English & IELTS */}
-            <Link
-              href="#english"
+            <div
+              // href="#english"
               className="bg-[#e8effc] hover:bg-[#dfe8fb] rounded-full px-5 sm:px-6 py-4 flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md group"
             >
               <div className="flex items-center gap-4">
@@ -230,11 +236,11 @@ export default function HeroSection() {
                   </svg>
                 </div>
                 <span className="text-black font-extrabold text-lg sm:text-xl tracking-tight">
-                  English
+                  Global membership
                 </span>
               </div>
               {/* White Circular Arrow */}
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-[#0059ff] shadow-sm group-hover:translate-x-1 transition-transform duration-300">
+              {/* <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-[#0059ff] shadow-sm group-hover:translate-x-1 transition-transform duration-300">
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]"
                   fill="none"
@@ -243,12 +249,12 @@ export default function HeroSection() {
                 >
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
-              </div>
-            </Link>
+              </div> */}
+            </div>
 
             {/* Card 3: 1-on-1 Mentors */}
-            <Link
-              href="/meet-a-mentor"
+            <div
+              // href="/meet-a-mentor"
               className="bg-[#e8effc] hover:bg-[#dfe8fb] rounded-full px-5 sm:px-6 py-4 flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md group"
             >
               <div className="flex items-center gap-4">
@@ -270,7 +276,7 @@ export default function HeroSection() {
                 </span>
               </div>
               {/* White Circular Arrow */}
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-[#0059ff] shadow-sm group-hover:translate-x-1 transition-transform duration-300">
+              {/* <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-[#0059ff] shadow-sm group-hover:translate-x-1 transition-transform duration-300">
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]"
                   fill="none"
@@ -279,8 +285,8 @@ export default function HeroSection() {
                 >
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
-              </div>
-            </Link>
+              </div> */}
+            </div>
           </div>
         </div>
       </div>

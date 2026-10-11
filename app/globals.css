@@ -15,6 +15,10 @@
   --color-primary-dark: var(--primary-dark);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-poppins), sans-serif;
   background-color: #ffffff;

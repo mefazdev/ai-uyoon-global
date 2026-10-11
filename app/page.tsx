@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
+import AboutPlatformSection from "./components/AboutPlatformSection";
 import TopCoursesSection from "./components/TopCoursesSection";
 import ShapeFutureSection from "./components/ShapeFutureSection";
 import PodcoursesSection from "./components/PodcoursesSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <HeroSection />
+        <AboutPlatformSection />
         <TopCoursesSection />
         <ShapeFutureSection />
         <PodcoursesSection />
