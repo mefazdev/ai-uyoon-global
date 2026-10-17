@@ -16,12 +16,12 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutPlatformSection />
-        <TopCoursesSection />
-        <ShapeFutureSection />
-        <PodcoursesSection />
-        <WhatsNewSection />
-        <ExpertMentorsSection />
-        <TestimonialsSection />
+        {/* <TopCoursesSection /> */}
+        {/* <ShapeFutureSection /> */}
+        {/* <PodcoursesSection /> */}
+        {/* <WhatsNewSection /> */}
+        {/* <ExpertMentorsSection /> */}
+        {/* <TestimonialsSection /> */}
       </main>
       <Footer />
     </div>

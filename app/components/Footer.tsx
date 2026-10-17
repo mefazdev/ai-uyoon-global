@@ -55,11 +55,7 @@ export default function Footer() {
                     Spoken Arabic Courses
                   </Link>
                 </li>
-                <li>
-                  <Link href="#courses" className="hover:text-primary transition-colors">
-                    English &amp; IELTS Prep
-                  </Link>
-                </li>
+
                 <li>
                   <Link href="#podcourses" className="hover:text-primary transition-colors">
                     Daily Audio Dialogues

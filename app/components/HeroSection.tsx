@@ -121,11 +121,11 @@ export default function HeroSection() {
         </div>
 
         {/* Interactive Video Interface Showcase */}
-        <div className="mt-10 sm:mt-12 w-full max-w-[1080px]">
+        {/* <div className="mt-10 sm:mt-12 w-full max-w-[1080px]">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] xl:grid-cols-[1fr_275px] gap-4 sm:gap-5 items-stretch">
-            {/* Left: Main Showcase Card */}
+
             <div className="relative rounded-[28px] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.08)] border border-gray-100/80 aspect-[16/10] sm:min-h-[380px] lg:min-h-[440px] bg-gradient-to-b from-[#70aeff] via-[#2f7ffa] to-[#0c66ee] flex items-center justify-center group">
-              {/* Live Embedded YouTube Player */}
+
               <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
                 <iframe
                   src={getYouTubeEmbedUrl(DUMMY_HERO_VIDEOS.mainShowcase)}
@@ -135,7 +135,7 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* Ambient Centered Branding Banner fallback / overlay */}
+
               <div className="relative z-10 flex flex-col items-center text-center px-6 pointer-events-none drop-shadow-md">
                 <p className="text-white/95 font-semibold text-2xl sm:text-3xl lg:text-4xl tracking-tight lowercase select-none">
                   start your journey with <span className="font-extrabold normal-case">AL Uyoon Global</span>
@@ -143,9 +143,9 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Right: 3 Stacked Mentor Video Cards */}
+
             <div className="flex flex-col justify-between gap-3.5 sm:gap-4 h-full">
-              {/* Card 1: Arabic Language Instructor */}
+
               <div className="relative rounded-[20px] overflow-hidden shadow-md bg-black h-[135px] sm:h-[138px] group hover:scale-[1.02] transition-transform duration-300">
                 <iframe
                   src={getYouTubeEmbedUrl(DUMMY_HERO_VIDEOS.mentor1)}
@@ -155,7 +155,6 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* Card 2: English & IELTS Coach */}
               <div className="relative rounded-[20px] overflow-hidden shadow-md bg-black h-[135px] sm:h-[138px] group hover:scale-[1.02] transition-transform duration-300">
                 <iframe
                   src={getYouTubeEmbedUrl(DUMMY_HERO_VIDEOS.mentor2)}
@@ -165,7 +164,7 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* Card 3: Founder & Master Linguist */}
+
               <div className="relative rounded-[20px] overflow-hidden shadow-md bg-black h-[135px] sm:h-[138px] group hover:scale-[1.02] transition-transform duration-300">
                 <iframe
                   src={getYouTubeEmbedUrl(DUMMY_HERO_VIDEOS.mentor3)}
@@ -173,7 +172,7 @@ export default function HeroSection() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   title="Founder & Master Linguist"
                 />
-                {/* Founder Badge Overlay */}
+
                 <div className="absolute bottom-2.5 left-3 z-10 flex items-center gap-1.5 bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-bold text-white tracking-wider">
                   <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
                   FOUNDER
@@ -181,7 +180,7 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom 3 Benefit Pill Cards */}
         <div className="mt-8 sm:mt-10 w-full max-w-[1080px]">

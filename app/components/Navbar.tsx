@@ -59,24 +59,24 @@ export default function Navbar() {
             >
               Live Coaching
             </Link> */}
-            <Link
+            {/* <Link
               href="/meet-a-mentor"
               className="hover:text-black transition-colors"
             >
               Meet Mentors
-            </Link>
+            </Link> */}
 
           </nav>
         </div>
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
-          <Link
+          {/* <Link
             href="#assessment"
             className="hidden sm:inline-flex items-center justify-center bg-primary hover:bg-primary-hover text-white text-sm font-semibold px-6 py-2 rounded-full transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:translate-y-0"
           >
             Login
-          </Link>
+          </Link> */}
 
           {/* Mobile Hamburger Toggle */}
           <button
