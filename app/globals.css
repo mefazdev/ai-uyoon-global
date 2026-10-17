@@ -29,21 +29,71 @@ body {
 }
 
 /* Word Slide Transitions */
-@keyframes wordSlideIn {
+@keyframes wordPopIn {
   0% {
     opacity: 0;
-    transform: translateY(18px) scale(0.96);
+    transform: translateY(22px) scale(0.92);
+    filter: blur(3px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
 .animate-word-in {
   display: inline-block;
-  animation: wordSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: wordPopIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero Section Animations */
+@keyframes heroFloatSlow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-16px) scale(1.05);
+  }
+}
+
+@keyframes heroFloatReverse {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(14px) scale(0.96);
+  }
+}
+
+@keyframes heroShineSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  35%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+@keyframes heroPulseGlow {
+  0%, 100% {
+    box-shadow: 0 10px 25px -5px rgba(2, 52, 98, 0.35);
+  }
+  50% {
+    box-shadow: 0 18px 36px -5px rgba(2, 52, 98, 0.55);
+  }
+}
+
+.animate-hero-float {
+  animation: heroFloatSlow 7s ease-in-out infinite;
+}
+
+.animate-hero-float-reverse {
+  animation: heroFloatReverse 8s ease-in-out infinite;
+}
+
+.animate-shine-sweep {
+  animation: heroShineSweep 4s ease-in-out infinite;
 }
 
 /* Smooth hover transitions */
@@ -54,4 +104,95 @@ body {
 .hover-lift:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px -6px rgba(0, 89, 255, 0.15);
+}
+
+/* ─── Launch Page Animations ─── */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countdownPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes celebrationBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, -40px) scale(1.15);
+  }
+}
+
+@keyframes celebrationFlash {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes welcomeBannerIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes welcomeBannerOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8) translateY(-30px);
+  }
 }

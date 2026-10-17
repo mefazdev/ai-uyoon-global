@@ -5,25 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ROTATING_WORDS = [
-
   "Confidence",
-
-
   "Career Growth",
   "Pronunciation",
   "Global Reach",
   "Mastery",
 ];
-
-const DUMMY_HERO_VIDEOS = {
-  mainShowcase: "LXb3EKWsInQ", // 4K Cinematic Nature & Motion Demo
-  mentor1: "W6NZfCO5SIk",      // Programming & Tech Instructor / Arabic Coach
-  mentor2: "iCvmsMzlF7o",      // Inspirational Speaker & English Coach
-  mentor3: "8S0FDjFBj8o",      // Founder / Master Linguist Keynote
-};
-
-const getYouTubeEmbedUrl = (videoId: string) =>
-  `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1`;
 
 export default function HeroSection() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -39,15 +26,44 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full bg-white pt-10 sm:pt-14 pb-16 overflow-hidden">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      {/* ── Ambient Background Glows & Floating Atmosphere ── */}
+      <div className="absolute -top-28 -left-28 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl pointer-events-none animate-hero-float" />
+      <div className="absolute top-16 -right-28 w-[420px] h-[420px] bg-sky-100/50 rounded-full blur-3xl pointer-events-none animate-hero-float-reverse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-50/40 rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Decorative dot matrix */}
+      <div
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(#023462 1px, transparent 1px)`,
+          backgroundSize: "28px 28px",
+        }}
+      />
+
+
+
+
+      <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         {/* Global Platform Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/70 text-primary text-xs sm:text-sm font-semibold mb-5 shadow-xs">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+        <div
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50/90 border border-blue-200/80 text-primary text-xs sm:text-sm font-semibold mb-5 shadow-xs transition-all duration-300 hover:scale-[1.02] hover:border-blue-300 hover:shadow-sm"
+          style={{ animation: "fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards" }}
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+          </span>
           <span>A Global Platform for Arabic Language Education &amp; Linguistic Excellence</span>
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-center font-extrabold text-4xl sm:text-5xl md:text-[62px] lg:text-[68px] tracking-tight leading-[1.12] text-black max-w-4xl mx-auto">
+        <h1
+          className="text-center font-extrabold text-4xl sm:text-5xl md:text-[62px] lg:text-[68px] tracking-tight leading-[1.12] text-black max-w-4xl mx-auto"
+          style={{
+            animation: "fadeSlideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards",
+            opacity: 0,
+          }}
+        >
           A New{" "}
           <span
             key={currentWord}
@@ -55,25 +71,38 @@ export default function HeroSection() {
           >
             {currentWord}
           </span>{" "}
-
           <br />
           Every Day.
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-5 text-center text-gray-600 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
+        <p
+          className="mt-5 text-center text-gray-600 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed"
+          style={{
+            animation: "fadeSlideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.25s forwards",
+            opacity: 0,
+          }}
+        >
           The Premier Arabic &amp; English Language Platform Built For Career Growth, Professionals &amp; Real-World Fluency
         </p>
 
         {/* Primary CTA Button */}
-        <div className="mt-8 flex justify-center">
+        <div
+          className="mt-8 flex justify-center"
+          style={{
+            animation: "fadeSlideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s forwards",
+            opacity: 0,
+          }}
+        >
           <Link
             href="#courses"
-            className="inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white text-base sm:text-[17px] font-semibold px-8 py-3.5 rounded-xl shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+            className="group relative inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white text-base sm:text-[17px] font-semibold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 overflow-hidden"
           >
-            <span>Start Your Language Journey</span>
+            {/* Shimmer sweep effect */}
+            <span className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none animate-shine-sweep" />
+            <span className="relative z-10">Start Your Language Journey</span>
             <svg
-              className="w-4 h-4 stroke-[2.5]"
+              className="relative z-10 w-4 h-4 stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1.5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -84,116 +113,63 @@ export default function HeroSection() {
         </div>
 
         {/* Social Proof */}
-        <div className="mt-6 flex items-center justify-center gap-3">
+        <div
+          className="mt-6 flex items-center justify-center gap-3"
+          style={{
+            animation: "fadeSlideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.55s forwards",
+            opacity: 0,
+          }}
+        >
           <div className="flex items-center -space-x-2.5">
             <Image
               src="/avatars/avatar1.jpg"
               alt="Learner"
               width={32}
               height={32}
-              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-sm"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-sm transition-transform duration-200 hover:scale-125 hover:z-20 cursor-pointer"
             />
             <Image
               src="/avatars/avatar2.jpg"
               alt="Learner"
               width={32}
               height={32}
-              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-sm"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-sm transition-transform duration-200 hover:scale-125 hover:z-20 cursor-pointer"
             />
             <Image
               src="/avatars/avatar3.jpg"
               alt="Learner"
               width={32}
               height={32}
-              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-sm"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-sm transition-transform duration-200 hover:scale-125 hover:z-20 cursor-pointer"
             />
             <Image
               src="/avatars/avatar4.jpg"
               alt="Learner"
               width={32}
               height={32}
-              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-sm"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-sm transition-transform duration-200 hover:scale-125 hover:z-20 cursor-pointer"
             />
           </div>
-          <span className="text-xs sm:text-sm font-medium text-gray-700">
-            2,000+ Students Mastered Arabic  with AL Uyoon Global
+          <span className="text-xs sm:text-sm font-medium text-gray-700 flex items-center gap-1.5">
+            <span className="text-amber-500 font-bold tracking-tighter">★★★★★</span>
+            <span>2,000+ Students Mastered Arabic with AL Uyoon Global</span>
           </span>
         </div>
-
-        {/* Interactive Video Interface Showcase */}
-        {/* <div className="mt-10 sm:mt-12 w-full max-w-[1080px]">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] xl:grid-cols-[1fr_275px] gap-4 sm:gap-5 items-stretch">
-
-            <div className="relative rounded-[28px] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.08)] border border-gray-100/80 aspect-[16/10] sm:min-h-[380px] lg:min-h-[440px] bg-gradient-to-b from-[#70aeff] via-[#2f7ffa] to-[#0c66ee] flex items-center justify-center group">
-
-              <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-                <iframe
-                  src={getYouTubeEmbedUrl(DUMMY_HERO_VIDEOS.mainShowcase)}
-                  className="absolute w-[150%] h-[150%] -top-[25%] -left-[25%] object-cover pointer-events-none"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  title="AL Uyoon Global Main Showcase"
-                />
-              </div>
-
-
-              <div className="relative z-10 flex flex-col items-center text-center px-6 pointer-events-none drop-shadow-md">
-                <p className="text-white/95 font-semibold text-2xl sm:text-3xl lg:text-4xl tracking-tight lowercase select-none">
-                  start your journey with <span className="font-extrabold normal-case">AL Uyoon Global</span>
-                </p>
-              </div>
-            </div>
-
-
-            <div className="flex flex-col justify-between gap-3.5 sm:gap-4 h-full">
-
-              <div className="relative rounded-[20px] overflow-hidden shadow-md bg-black h-[135px] sm:h-[138px] group hover:scale-[1.02] transition-transform duration-300">
-                <iframe
-                  src={getYouTubeEmbedUrl(DUMMY_HERO_VIDEOS.mentor1)}
-                  className="absolute w-[140%] h-[140%] -top-[20%] -left-[20%] object-cover pointer-events-none"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  title="Arabic Language Instructor"
-                />
-              </div>
-
-              <div className="relative rounded-[20px] overflow-hidden shadow-md bg-black h-[135px] sm:h-[138px] group hover:scale-[1.02] transition-transform duration-300">
-                <iframe
-                  src={getYouTubeEmbedUrl(DUMMY_HERO_VIDEOS.mentor2)}
-                  className="absolute w-[140%] h-[140%] -top-[20%] -left-[20%] object-cover pointer-events-none"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  title="English & IELTS Coach"
-                />
-              </div>
-
-
-              <div className="relative rounded-[20px] overflow-hidden shadow-md bg-black h-[135px] sm:h-[138px] group hover:scale-[1.02] transition-transform duration-300">
-                <iframe
-                  src={getYouTubeEmbedUrl(DUMMY_HERO_VIDEOS.mentor3)}
-                  className="absolute w-[140%] h-[140%] -top-[20%] -left-[20%] object-cover pointer-events-none"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  title="Founder & Master Linguist"
-                />
-
-                <div className="absolute bottom-2.5 left-3 z-10 flex items-center gap-1.5 bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-bold text-white tracking-wider">
-                  <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
-                  FOUNDER
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         {/* Bottom 3 Benefit Pill Cards */}
         <div className="mt-8 sm:mt-10 w-full max-w-[1080px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {/* Card 1: Arabic Courses */}
             <div
-              // href="#courses"
-              className="bg-[#e8effc] hover:bg-[#dfe8fb] rounded-full px-5 sm:px-6 py-4 flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md group"
+              className="bg-[#e8effc] hover:bg-[#dfe8fb] rounded-full px-5 sm:px-6 py-4 flex items-center justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/10 border border-transparent hover:border-blue-200/60 group cursor-pointer"
+              style={{
+                animation: "fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.65s forwards",
+                opacity: 0,
+              }}
             >
               <div className="flex items-center gap-4">
                 {/* Blue Circular Icon Container */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-300">
-                  {/* Arabic / Language Icon */}
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <svg
                     className="w-6 h-6 sm:w-7 sm:h-7 fill-none stroke-white stroke-[2]"
                     viewBox="0 0 24 24"
@@ -201,32 +177,23 @@ export default function HeroSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
                 </div>
-                <span className="text-black font-extrabold text-lg sm:text-xl tracking-tight">
+                <span className="text-black font-extrabold text-lg sm:text-xl tracking-tight group-hover:text-primary transition-colors duration-200">
                   Arabic Courses
                 </span>
               </div>
-              {/* White Circular Arrow */}
-              {/* <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm group-hover:translate-x-1 transition-transform duration-300">
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </div> */}
             </div>
 
             {/* Card 2: English & IELTS */}
             <div
-              // href="#english"
-              className="bg-[#e8effc] hover:bg-[#dfe8fb] rounded-full px-5 sm:px-6 py-4 flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md group"
+              className="bg-[#e8effc] hover:bg-[#dfe8fb] rounded-full px-5 sm:px-6 py-4 flex items-center justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/10 border border-transparent hover:border-blue-200/60 group cursor-pointer"
+              style={{
+                animation: "fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.75s forwards",
+                opacity: 0,
+              }}
             >
               <div className="flex items-center gap-4">
                 {/* Blue Circular Icon Container */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-300">
-                  {/* Book / Graduation Cap Icon */}
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <svg
                     className="w-6 h-6 sm:w-7 sm:h-7 fill-white"
                     viewBox="0 0 24 24"
@@ -234,32 +201,23 @@ export default function HeroSection() {
                     <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.45 13.47L12 18.13l8.55-4.66V17L12 21.66 3.45 17v-3.53z" />
                   </svg>
                 </div>
-                <span className="text-black font-extrabold text-lg sm:text-xl tracking-tight">
+                <span className="text-black font-extrabold text-lg sm:text-xl tracking-tight group-hover:text-primary transition-colors duration-200">
                   Global membership
                 </span>
               </div>
-              {/* White Circular Arrow */}
-              {/* <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-[#0059ff] shadow-sm group-hover:translate-x-1 transition-transform duration-300">
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </div> */}
             </div>
 
             {/* Card 3: 1-on-1 Mentors */}
             <div
-              // href="/meet-a-mentor"
-              className="bg-[#e8effc] hover:bg-[#dfe8fb] rounded-full px-5 sm:px-6 py-4 flex items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md group"
+              className="bg-[#e8effc] hover:bg-[#dfe8fb] rounded-full px-5 sm:px-6 py-4 flex items-center justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/10 border border-transparent hover:border-blue-200/60 group cursor-pointer"
+              style={{
+                animation: "fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.85s forwards",
+                opacity: 0,
+              }}
             >
               <div className="flex items-center gap-4">
                 {/* Blue Circular Icon Container */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-300">
-                  {/* Users / Mentors Icon */}
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0 shadow-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <svg
                     className="w-6 h-6 sm:w-7 sm:h-7 fill-none stroke-white stroke-[2]"
                     viewBox="0 0 24 24"
@@ -270,21 +228,10 @@ export default function HeroSection() {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                   </svg>
                 </div>
-                <span className="text-black font-extrabold text-lg sm:text-xl tracking-tight">
+                <span className="text-black font-extrabold text-lg sm:text-xl tracking-tight group-hover:text-primary transition-colors duration-200">
                   1-on-1 Mentors
                 </span>
               </div>
-              {/* White Circular Arrow */}
-              {/* <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-[#0059ff] shadow-sm group-hover:translate-x-1 transition-transform duration-300">
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </div> */}
             </div>
           </div>
         </div>
